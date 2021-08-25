@@ -1,90 +1,50 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
-  runApp(Home());
+  runApp(Alexa());
 }
 
-class Home extends StatelessWidget {
+class Alexa extends StatefulWidget {
   @override
+  _AlexaState createState() => _AlexaState();
+}
+
+class _AlexaState extends State<Alexa> {
+  int number = 3;
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.yellow[100],
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Center(child: Text('Ansh Profile')),
-          backgroundColor: Colors.deepOrange,
+          title: Center(
+            child: Text(
+              'Ask me anything',
+              style: TextStyle(
+                  fontFamily: 'SourceSansPro', fontStyle: FontStyle.normal),
+            ),
+          ),
+          backgroundColor: Colors.red,
         ),
         body: SafeArea(
-            child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(height: 50),
-              CircleAvatar(
-                radius: 50,
-                foregroundImage: AssetImage('images/Ansh.jpeg'),
-              ),
-              SizedBox(height: 10),
-              Text("Ansh Agrawal",
-                  style: TextStyle(
-                      fontSize: 45,
-                      fontFamily: 'SourceSansPro',
-                      fontWeight: FontWeight.bold)),
-              SizedBox(height: 5),
-              Text("FOUNDER, REALTALK",
-                  style: TextStyle(fontSize: 25, fontFamily: 'SourceSansPro')),
-              SizedBox(
-                height: 25,
-                child: Divider(color: Colors.black, thickness: 7, indent: 40, endIndent: 40)
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.deepOrange,
-                  borderRadius: BorderRadius.only(
-                    topLeft: const Radius.circular(5.0),
-                    topRight: const Radius.circular(5.0),
-                    bottomLeft: const Radius.circular(5.0),
-                    bottomRight: const Radius.circular(5.0),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Icon(Icons.phone, color: Colors.black, size: 35),
-                    SizedBox(width: 25),
-                    Text(
-                      '+91 9319244052',
-                      style: TextStyle(fontSize: 30, color: Colors.black),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.deepOrange,
-                  borderRadius: BorderRadius.only(
-                    topLeft: const Radius.circular(5.0),
-                    topRight: const Radius.circular(5.0),
-                    bottomLeft: const Radius.circular(5.0),
-                    bottomRight: const Radius.circular(5.0),
-                  ),
-                ),
-                child: ListTile(
-                  leading: Icon(Icons.email, color: Colors.black, size: 35),
-                  title: Text(
-                    'ansh.agrawal@joinrealtalk.co',
-                    style: TextStyle(fontSize: 20, color: Colors.black),
-                  ),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextButton(
+                onPressed: (){
+                  setState(() {
+                    number = Random().nextInt(5)+1;
+                  });
+                },
+                child: Container(
+                  child: Image.asset('ball$number.png'),
                 ),
               )
-            ],
+            ),
           ),
-        )),
+        ),
       ),
     );
   }
 }
+
