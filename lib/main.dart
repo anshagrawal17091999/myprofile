@@ -1,48 +1,22 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 void main() {
-  runApp(Alexa());
+  runApp(MaterialApp(home: Destini()));
 }
 
-class Alexa extends StatefulWidget {
+class Destini extends StatefulWidget {
   @override
-  _AlexaState createState() => _AlexaState();
+  _DestiniState createState() => _DestiniState();
 }
 
-class _AlexaState extends State<Alexa> {
-  int number = 3;
+class _DestiniState extends State<Destini> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Center(
-            child: Text(
-              'Ask me anything',
-              style: TextStyle(
-                  fontFamily: 'SourceSansPro', fontStyle: FontStyle.normal),
-            ),
-          ),
-          backgroundColor: Colors.red,
-        ),
-        body: SafeArea(
-          child: Center(
-            child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: TextButton(
-                  onPressed: () {
-                    setState(() {
-                      number = Random().nextInt(4) + 1;
-                    });
-                  },
-                  child: Container(
-                    child: Image.asset('images/ball$number.png'),
-                  ),
-                )),
-          ),
-        ),
-      ),
+    return Scaffold(
+      body: SafeArea(
+          child: Container(
+        child: Image.asset('images/background.png'),
+      )),
     );
   }
 }
