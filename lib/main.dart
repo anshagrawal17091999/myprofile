@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
+import 'BMI App/inputpage.dart';
+void main() => runApp(BMICalculator());
 
-void main() {
-  runApp(MaterialApp(home: Destini()));
-}
-
-class Destini extends StatefulWidget {
-  @override
-  _DestiniState createState() => _DestiniState();
-}
-
-class _DestiniState extends State<Destini> {
+class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: Container(
-        child: Image.asset('images/background.png'),
-      )),
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF0A0E21),
+        scaffoldBackgroundColor: Color(0xFF0A0E21)
+        ),
+      home: InputPage(),
     );
   }
 }
