@@ -202,21 +202,21 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Bottombutton('Calculate Now', () {
-              Calculatorbrain calc =
-                  Calculatorbrain(height: height, weight: weight);
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Resultspage(calc.bmicalculate(),
-                          calc.bmiresult(), calc.interpretation())));
-            })
+            Bottombutton(
+              'Calculate Now',
+              () {
+                Calculatorbrain calc =
+                    Calculatorbrain(height: height, weight: weight);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Resultspage(calc.bmicalculate(),
+                            calc.bmiresult(), calc.interpretation())));
+              },
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
-

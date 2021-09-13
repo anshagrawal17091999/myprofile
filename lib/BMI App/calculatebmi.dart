@@ -8,8 +8,8 @@ class Calculatorbrain {
   late double calc1;
 
   String bmicalculate() {
-      _bmi = weight!/pow(height!/100, 2);
-      return _bmi.toStringAsFixed(2);
+    _bmi = weight! / pow(height! / 100, 2);
+    return _bmi.toStringAsFixed(2);
   }
 
   String bmiresult() {

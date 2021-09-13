@@ -5,7 +5,6 @@ import 'package:myprofile/BMI App/reuseablecard.dart';
 import 'package:myprofile/BMI App/bottombutton.dart';
 
 class Resultspage extends StatelessWidget {
-  
   Resultspage(this.bmiresult, this.resulttext, this.interpretation);
   final String? bmiresult;
   final String? resulttext;
